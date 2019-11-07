@@ -5,3 +5,132 @@
 @import "base/fonts";
 @import "base/general";
 @import "../blocks/modules";
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #151221;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 1.45em;
+}
+html {
+    overflow-x: hidden;
+}
+
+p {
+    color: #000;
+}
+
+
+.container {
+    width: 1440px !important;
+    margin: 0 auto !important;
+    min-width: 1440px;
+}
+
+ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover, a:active, a:focus, button, input, button:hover, button:active, button:focus, input:active, input:focus {
+    text-decoration: none;
+    outline: none;
+    color: #000;
+}
+
+.menu__bg {
+    background: #fff;
+}
+
+.header {
+    height: 100vh;
+    min-height: 700px;
+    margin: 0;
+    position: relative;
+}
+
+.content__bg {
+    display: none;
+}
+
+.hamburger-menu {
+    z-index: 10;
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+}
+
+.header__main {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang__link_cut {
+    display: none;
+}
+
+.header__menu {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu__item {
+    margin-left: 30px;
+    &:first-child {
+        margin-left: 0;
+    }
+    
+}
+ul a.menu__link{
+    color: #787878;
+    &:hover {
+        color: #000;
+        transition: all 0.5s cubic-bezier(.5, 0, .3, 1);
+    }
+}
+
+.language__item {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & a {
+        color: #787878;
+    }
+    & a:hover, a:active {
+        color: #000;
+        transition: all 0.5s cubic-bezier(.5, 0, .3, 1);
+    }
+    & p {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+section.main-sect {
+    background: #000;
+    height: 100vh;
+}
+
+.offer {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+}
