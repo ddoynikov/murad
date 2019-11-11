@@ -1,16 +1,16 @@
 import "./import/modules";
 
 // Params
-let mainSliderSelector = '.main-slider',
+var mainSliderSelector = '.main-slider',
     navSliderSelector = '.nav-slider',
     interleaveOffset = 0.5;
 
 // Main Slider
-let mainSliderOptions = {
+var mainSliderOptions = {
       loop: true,
       speed:1000,
       autoplay:{
-        delay:3000
+        delay:8000
       },
       loopAdditionalSlides: 10,
       grabCursor: true,
@@ -28,33 +28,32 @@ let mainSliderOptions = {
           this.autoplay.start();
         },
         slideChangeTransitionEnd: function(){
-          let swiper = this,
+          var swiper = this,
               captions = swiper.el.querySelectorAll('.caption');
-          for (let i = 0; i < captions.length; ++i) {
+          for (var i = 0; i < captions.length; ++i) {
             captions[i].classList.remove('show');
           }
           swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
         },
         progress: function(){
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
-            let slideProgress = swiper.slides[i].progress,
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            var slideProgress = swiper.slides[i].progress,
                 innerOffset = swiper.width * interleaveOffset,
                 innerTranslate = slideProgress * innerOffset;
-           
             swiper.slides[i].querySelector(".slide-bgimg").style.transform =
-              "translateX(" + innerTranslate + "px)";
+              "translate3d(" + innerTranslate + "px, 0, 0)";
           }
         },
         touchStart: function() {
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
             swiper.slides[i].style.transition = "";
           }
         },
         setTransition: function(speed) {
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
             swiper.slides[i].style.transition = speed + "ms";
             swiper.slides[i].querySelector(".slide-bgimg").style.transition =
               speed + "ms";
@@ -62,10 +61,10 @@ let mainSliderOptions = {
         }
       }
     };
-let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+var mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 
 // Navigation Slider
-let navSliderOptions = {
+var navSliderOptions = {
       loop: true,
       loopAdditionalSlides: 10,
       speed:1000,
@@ -84,7 +83,7 @@ let navSliderOptions = {
         }
       }
     };
-let navSlider = new Swiper(navSliderSelector, navSliderOptions);
+var navSlider = new Swiper(navSliderSelector, navSliderOptions);
 
 // Matching sliders
 mainSlider.controller.control = navSlider;
